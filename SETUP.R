@@ -30,12 +30,12 @@ usethis::browse_github()
 
 
 # Start LM Studio if needed
-terminal_id = minifunctions::terminal(".\\StartLMstudio.ps1")
+terminal_id = rstudiotools::terminal(".\\StartLMstudio.ps1")
 # Start Claude Code if needed
-minifunctions::terminal("claude --model qwen/qwen3.5-9b", terminal_id = terminal_id)
+rstudiotools::terminal("claude --model qwen/qwen3.5-9b", terminal_id = terminal_id)
 
 prompt = "Review the project and update claude.md to reflect the current architecture and recent changes."
-minifunctions::terminal(prompt, terminal_id = terminal_id)
+rstudiotools::terminal(prompt, terminal_id = terminal_id)
 
 
 
