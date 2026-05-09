@@ -12,7 +12,7 @@ showinfo = function() {
   info = sessioninfo::session_info(info="platform")
   options(warn = 0)
 
-  cat("\nshowinfo:\n")
+  cat( cli::rule(left = "showinfo", col = "blue"),"\n" )
   cat("Working Directory :",getwd(),"\n")
   if ( interactive() ) cat("Script Name . . . :",rstudioapi::getActiveDocumentContext()$path,"\n")
   cat("Timestamp . . . . :",as.character(Sys.time()),"\n")
@@ -31,15 +31,20 @@ showinfo = function() {
   cat("integrated GPU. . :",GPU[4],"\n")
   cat("discrete GPU. . . :",GPU[5],"\n")
 
-  cat("R . . . . . . . . :",R.version.string,"\n")
+  # if R.version.string contains "ucrt" then it is the UCRT version of R, otherwise it is the MSVCRT version
+  if ( grepl("ucrt",R.version.string) ) {
+    cat("R . . . . . . . . :",R.version.string,"( Universal C Runtime )\n")
+  } else {
+    cat("R . . . . . . . . :",R.version.string,"\n")
+  }
+
+  IDE = info[["platform"]][["ui"]]
 
   # If not interactive, cannot communicate with rstudioapi
-  if ( interactive() ) {
-    cat("RStudio . . . . . :",as.character(info[["platform"]][["rstudio"]]),"\n")
+  # if ( IDE == "RStudio" && interactive() ) {
+  if ( IDE == "RStudio" ) {
+    cat("IDE . . . . . . . : RStudio",as.character(info[["platform"]][["rstudio"]]),"\n")
     cat("R Project . . . . :",rstudioapi::getActiveProject(),"\n")
-  } else {
-    cat("RStudio . . . . . : Not Available, when interactive() = FALSE\n")
-    cat("R Project . . . . : Not Available, when interactive() = FALSE\n")
   }
 
   cat("Language. . . . . :",info[["platform"]][["language"]],"\n")

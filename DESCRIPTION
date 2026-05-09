@@ -10,6 +10,7 @@ Description: RStudio Addins and other functions which deal with rstudioapi Packa
 License: MIT + file LICENSE
 Imports:
   benchmarkme,
+  cli,
   grid,
   htmltools,
   jpeg,
