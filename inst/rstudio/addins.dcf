@@ -1,0 +1,39 @@
+Name: Sort A-Z
+Description: Sorts selected lines (ascending order) in active editor window.
+Binding: sortascending
+Interactive: false
+
+Name: Sort Z-A
+Description: Sorts selected lines (descending order) in active editor window.
+Binding: sortdescending
+Interactive: false
+
+Name: Upper Case
+Description: Converts text into upper case
+Binding: uppercase
+Interactive: false
+
+Name: Lower Case
+Description: Converts text into lower case
+Binding: lowercase
+Interactive: false
+
+Name: Sentence Case
+Description: Converts text into sentence case
+Binding: sentencecase
+Interactive: false
+
+Name: Title Case
+Description: Converts text into title case
+Binding: titlecase
+Interactive: false
+
+Name: Align Text
+Description: Align selection text
+Binding: aligntext
+Interactive: false
+
+Name: Sort Functions
+Description: Insert Global Environment Function definitions into current Selection
+Binding: sortfunctions
+Interactive: false
