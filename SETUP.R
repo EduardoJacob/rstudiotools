@@ -39,3 +39,26 @@ rstudiotools::terminal(prompt, terminal_id = terminal_id)
 
 
 
+# 1. Load all functions in your /R directory into the environment package:rstudiotools
+devtools::load_all()
+
+# 2. Now run the check (do not use quotes around the function name)
+codetools::checkUsage(aligntext, all = TRUE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
