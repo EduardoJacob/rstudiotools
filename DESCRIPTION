@@ -1,11 +1,22 @@
 Package: rstudiotools
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Type: Package
+Title: RStudio Addins and other functions which deal with rstudioapi Package
+Version: 2026.05.09
+Authors@R: c(
+    person("Eduardo", "Jacob", , "eduardo.jorge.jacob@hotmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0009-0009-2103-852X"))
+  )
+Description: RStudio Addins and other functions which deal with rstudioapi Package.
+License: MIT + file LICENSE
+Imports:
+	grid,
+	htmltools,
+	jpeg,
+	png,
+	shiny,
+    rstudioapi,
+    stringr,
+    utils
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0

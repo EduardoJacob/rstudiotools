@@ -3,3 +3,6 @@
 ^\.positai$
 ^\.claude$
 ^SETUP\.R$
+^README\.Rmd$
+^LICENSE\.md$
+^StartLMstudio\.ps1$
