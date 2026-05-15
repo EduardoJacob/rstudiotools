@@ -30,7 +30,7 @@ usethis::browse_github()
 
 
 # Start LM Studio if needed
-terminal_id = rstudiotools::terminal(".\\StartLMstudio.ps1")
+terminal_id = rstudiotools::terminal(".\\StartLMstudio.ps1",caption="CLAUDE")
 # Start Claude Code if needed
 rstudiotools::terminal("claude --model qwen/qwen3.5-9b", terminal_id = terminal_id)
 

@@ -3,7 +3,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' showinfo()
+#' }
 showinfo = function() {
   # library("benchmarkme")
 
@@ -44,8 +46,11 @@ showinfo = function() {
   # if ( IDE == "RStudio" && interactive() ) {
   if ( IDE == "RStudio" ) {
     cat("IDE . . . . . . . : RStudio",as.character(info[["platform"]][["rstudio"]]),"\n")
-    cat("R Project . . . . :",rstudioapi::getActiveProject(),"\n")
+  } else {
+    cat("IDE . . . . . . . :",IDE,"\n")
   }
+
+  if ( interactive() ) cat("R Project . . . . :",rstudioapi::getActiveProject(),"\n")
 
   cat("Language. . . . . :",info[["platform"]][["language"]],"\n")
   cat("Location. . . . . :",info[["platform"]][["tz"]],"\n")

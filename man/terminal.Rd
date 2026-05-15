@@ -4,12 +4,14 @@
 \alias{terminal}
 \title{Send command to new terminal}
 \usage{
-terminal(command, terminal_id = NULL)
+terminal(command, terminal_id = NULL, caption = NULL)
 }
 \arguments{
 \item{command}{Send command to terminal}
 
 \item{terminal_id}{Optional terminal_id to send command to, if NULL a new terminal will be created}
+
+\item{caption}{Optional terminal caption}
 }
 \description{
 Send command to new terminal

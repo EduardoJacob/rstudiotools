@@ -10,5 +10,7 @@ showinfo()
 Enhanced Session Information
 }
 \examples{
+\dontrun{
 showinfo()
+}
 }
