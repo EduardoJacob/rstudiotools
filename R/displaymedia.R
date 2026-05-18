@@ -55,6 +55,10 @@ displaymedialoop = function(filename) {
     img = jpeg::readJPEG(filename)
     grid::grid.newpage()
     grid::grid.raster(img)
+
+    # img = magick::image_read(filename)
+    # print(img) - In the Viewer Pane - doesn't scale
+    # plot(img) # In the Plot pane - scales better
   }
 
   if ( origin == "LOCAL" && grepl(extension,"png") ) {

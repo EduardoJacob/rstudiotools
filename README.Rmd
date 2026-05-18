@@ -4,6 +4,10 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<p align="center">
+  <img src="images/R Programming.png" alt="R Programming" width="600">
+</p>
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

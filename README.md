@@ -1,6 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<p align="center">
+
+<img src="images/R Programming.png" alt="R Programming" width="600">
+</p>
+
 # rstudiotools <img src="man/figures/logo.png" align="right" height="138" alt="rstudiotools package" />
 
 <!-- badges: start -->
