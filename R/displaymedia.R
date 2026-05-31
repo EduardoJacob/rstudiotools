@@ -69,7 +69,7 @@ displaymedialoop = function(filename) {
 
   if ( origin == "LOCAL" && grepl(extension,"pdf,mp4,webm") ) {
     invisible( file.copy(from=filename, to=tempdir(),overwrite=T) )
-    rstudioapi::viewer( file.path( tempdir(),filename) )
+    rstudioapi::viewer( file.path( tempdir(),basename(filename)) )
   }
 
 
@@ -154,7 +154,6 @@ displaymedialoop = function(filename) {
   }
 
 }
-
 
 
 
