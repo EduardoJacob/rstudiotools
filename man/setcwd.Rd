@@ -2,12 +2,15 @@
 % Please edit documentation in R/setcwd.R
 \name{setcwd}
 \alias{setcwd}
-\title{Send current working directory}
+\title{Set current working directory}
 \usage{
-setcwd()
+setcwd(directory = NULL)
+}
+\arguments{
+\item{directory}{Optional. A directory path to set as the working directory.}
 }
 \description{
-Send current working directory
+Set current working directory to the directory of the active script in RStudio, or to a specified directory if provided.
 }
 \examples{
 \dontrun{

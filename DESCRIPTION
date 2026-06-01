@@ -1,7 +1,7 @@
 Package: rstudiotools
 Type: Package
 Title: RStudio Addins and other functions which deal with rstudioapi Package
-Version: 2026.05.31
+Version: 2026.06.01
 Authors@R: c(
     person("Eduardo", "Jacob", , "eduardo.jorge.jacob@hotmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0009-2103-852X"))
