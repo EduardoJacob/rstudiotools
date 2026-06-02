@@ -24,7 +24,7 @@ displaymedia = function(filename="") {
     message("Displaying: ", filename)
     displaymedialoop(filename)
   } else {
-    filenames = list.files(pattern = "\\.(jpg|jpeg|png|pdf|mp4|webm)$", ignore.case = TRUE)
+    filenames = list.files(pattern = "\\.(jpg|jpeg|png|pdf|mp4|webm|mp3)$", ignore.case = TRUE)
     i = 1
     num = length(filenames)
     if ( num == 0 ) return("No media found")
@@ -67,7 +67,7 @@ displaymedialoop = function(filename) {
     grid::grid.raster(img)
   }
 
-  if ( origin == "LOCAL" && grepl(extension,"pdf,mp4,webm") ) {
+  if ( origin == "LOCAL" && grepl(extension,"pdf,mp3,mp4,webm") ) {
     invisible( file.copy(from=filename, to=tempdir(),overwrite=T) )
     rstudioapi::viewer( file.path( tempdir(),basename(filename)) )
   }
