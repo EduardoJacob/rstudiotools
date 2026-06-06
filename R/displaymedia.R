@@ -24,7 +24,7 @@ displaymedia = function(filename="") {
     message("Displaying: ", filename)
     displaymedialoop(filename)
   } else {
-    filenames = list.files(pattern = "\\.(jpg|jpeg|png|pdf|mp4|webm|mp3)$", ignore.case = TRUE)
+    filenames = list.files(pattern = "\\.(jpg|jpeg|png|pdf|mp4|webm|mp3|md)$", ignore.case = TRUE)
     i = 1
     num = length(filenames)
     if ( num == 0 ) return("No media found")
@@ -55,10 +55,12 @@ displaymedialoop = function(filename) {
     img = jpeg::readJPEG(filename)
     grid::grid.newpage()
     grid::grid.raster(img)
+  }
 
-    # img = magick::image_read(filename)
-    # print(img) - In the Viewer Pane - doesn't scale
-    # plot(img) # In the Plot pane - scales better
+  if ( origin == "LOCAL" && grepl(extension,"md") ) {
+    tempfile = tempfile(fileext = ".html")
+    rmarkdown::render(filename,output_file=tempfile)
+    rstudioapi::viewer(tempfile)
   }
 
   if ( origin == "LOCAL" && grepl(extension,"png") ) {
