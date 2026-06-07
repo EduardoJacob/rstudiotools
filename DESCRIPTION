@@ -14,7 +14,6 @@ Imports:
   grid,
   htmltools,
   jpeg,
-  markdown,
   png,
   rmarkdown,
   rstudioapi,
