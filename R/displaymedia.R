@@ -2,11 +2,11 @@
 #'
 #' @description
 #' Display media file on Rstudio, either on "Plots" or "Viewer" panels
-#' Supported formats: jpg, jpeg, png, webm, mp4, pdf, youtube
-#' Local files or Cloud are supported
+#' Supported formats: jpg, jpeg, png, webm, mp3, mp4, pdf, md, youtube
+#' Local files or Cloud are supported.
 #'
 #'
-#' @param filename The filename, either Local or URL
+#' @param path Optional filename, or directory, or URL (defaults to current directory)
 #'
 #' @export
 #'
@@ -19,12 +19,20 @@
 #' displaymedia("sample.mp4")
 #' displaymedia("sample.pdf")
 #' }
-displaymedia = function(filename="") {
-  if ( filename != "" ) {
-    message("Displaying: ", filename)
-    displaymedialoop(filename)
-  } else {
-    filenames = list.files(pattern = "\\.(jpg|jpeg|png|pdf|mp4|webm|mp3|md)$", ignore.case = TRUE)
+displaymedia = function(path=getwd()) {
+  is_dir = dir.exists(path)
+  is_file = file.exists(path) && !dir.exists(path)
+
+  if ( is_file ) {
+    message("Displaying: ", path)
+    displaymedialoop(path)
+  } else if ( is_dir ) {
+    filenames = list.files(
+      path = path,
+      pattern = "\\.(jpg|jpeg|png|pdf|mp4|webm|mp3|md)$",
+      ignore.case = TRUE,
+      full.names = TRUE
+    )
     i = 1
     num = length(filenames)
     if ( num == 0 ) return("No media found")
@@ -37,6 +45,8 @@ displaymedia = function(filename="") {
       if ( i <= num ) answer = readline(prompt = "Press [Enter] to continue, [c] to Cancel... ")
       if ( tolower(answer) == "c" ) return(invisible(NULL))
     }
+  } else {
+    stop("Invalid path: ", path)
   }
 
 }

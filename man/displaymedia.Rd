@@ -4,15 +4,15 @@
 \alias{displaymedia}
 \title{Display media file}
 \usage{
-displaymedia(filename = "")
+displaymedia(path = getwd())
 }
 \arguments{
-\item{filename}{The filename, either Local or URL}
+\item{path}{Optional filename, or directory, or URL (defaults to current directory)}
 }
 \description{
 Display media file on Rstudio, either on "Plots" or "Viewer" panels
-Supported formats: jpg, jpeg, png, webm, mp4, pdf, youtube
-Local files or Cloud are supported
+Supported formats: jpg, jpeg, png, webm, mp3, mp4, pdf, md, youtube
+Local files or Cloud are supported.
 }
 \examples{
 \dontrun{
