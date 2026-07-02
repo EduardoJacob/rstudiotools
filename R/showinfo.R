@@ -54,6 +54,11 @@ showinfo = function() {
 
   cat("Language. . . . . :",info[["platform"]][["language"]],"\n")
   cat("Location. . . . . :",info[["platform"]][["tz"]],"\n")
+  cat("CRAN. . . . . . . :",getOption("repos"),"\n")
+  cat("Libpath . . . . . :",.libPaths(),"\n")
+
+  # Check for R upgrade available
+  # try( invisible( installr::check.for.updates.R(GUI=F) ),silent=F)
 
   invisible()
 } # showinfo
