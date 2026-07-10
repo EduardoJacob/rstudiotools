@@ -11,7 +11,7 @@ displaymedia(path = getwd())
 }
 \description{
 Display media file on Rstudio, either on "Plots" or "Viewer" panels
-Supported formats: jpg, jpeg, png, webm, mp3, mp4, pdf, md, youtube
+Supported formats: jpg, jpeg, png, webm, mp3, m4a, mp4, pdf, md, youtube
 Local files or Cloud are supported.
 }
 \examples{

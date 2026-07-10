@@ -2,7 +2,7 @@
 #'
 #' @description
 #' Display media file on Rstudio, either on "Plots" or "Viewer" panels
-#' Supported formats: jpg, jpeg, png, webm, mp3, mp4, pdf, md, youtube
+#' Supported formats: jpg, jpeg, png, webm, mp3, m4a, mp4, pdf, md, youtube
 #' Local files or Cloud are supported.
 #'
 #'
@@ -29,7 +29,7 @@ displaymedia = function(path=getwd()) {
   } else if ( is_dir ) {
     filenames = list.files(
       path = path,
-      pattern = "\\.(jpg|jpeg|png|pdf|mp4|webm|mp3|md)$",
+      pattern = "\\.(jpg|jpeg|png|pdf|mp4|webm|mp3|m4a|md)$",
       ignore.case = TRUE,
       full.names = TRUE
     )
@@ -84,6 +84,15 @@ displaymedialoop = function(filename) {
     rstudioapi::viewer( file.path( tempdir(),basename(filename)) )
   }
 
+  if ( origin == "LOCAL" && grepl(extension,"m4a") ) {
+    # Create a temporary HTML file with an audio tag
+    html_content = htmltools::tags$audio(src = filename, controls = TRUE, type = "audio/mp4")
+    temp_html = tempfile(fileext = ".html")
+    htmltools::save_html(html_content, temp_html)
+
+    # Open in the RStudio Viewer
+    rstudioapi::viewer(temp_html)
+  }
 
   if ( origin == "CLOUD" && grepl(extension,"pdf") ) {
     htmltools::html_print(
