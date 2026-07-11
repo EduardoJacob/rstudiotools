@@ -85,6 +85,7 @@ displaymedialoop = function(filename) {
   }
 
   if ( origin == "LOCAL" && grepl(extension,"m4a") ) {
+    invisible( file.copy(from=filename, to=tempdir(),overwrite=T) )
     # Create a temporary HTML file with an audio tag
     html_content = htmltools::tags$audio(src = filename, controls = TRUE, type = "audio/mp4")
     temp_html = tempfile(fileext = ".html")
