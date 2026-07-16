@@ -3,9 +3,8 @@
 if (file.exists(".Rbuildignore")) {
   current_file = basename( rstudioapi::getSourceEditorContext()$path )
   usethis::use_build_ignore(current_file)
-  usethis::use_build_ignore("StartLMstudio.ps1")
+  usethis::use_build_ignore("powershell")
   usethis::use_build_ignore("images")
-
 }
 
 # No caso de falhar o "Package Check" com Codoc mismatches from Rd file
