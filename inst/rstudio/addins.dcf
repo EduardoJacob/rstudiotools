@@ -37,3 +37,8 @@ Name: Sort Functions
 Description: Insert Global Environment Function definitions into current Selection
 Binding: sortfunctions
 Interactive: false
+
+Name: Notepad++
+Description: Open current Document in Notepad++
+Binding: notepadplusplus
+Interactive: false

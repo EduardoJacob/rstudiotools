@@ -3,6 +3,7 @@
 export(aligntext)
 export(displaymedia)
 export(lowercase)
+export(notepadplusplus)
 export(sentencecase)
 export(setcwd)
 export(showinfo)
